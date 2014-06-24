@@ -241,6 +241,99 @@ done
     
     </settingsPane>
   </settingsTab>
+  
+if [ -e /sys/class/misc/boeffla_sound ]; then
+
+  <settingsTab name="Audio">
+    <settingsPane description="Speaker Tuning Settings" name="Speaker Tuning">
+    
+     <spinner description="Enable or disable Boeffla Audio Engine" name="Boeffla Audio" action="generic /sys/class/misc/boeffla_sound/boeffla_sound">
+             <spinnerItem name="Enabled" value="1"/> 
+             <spinnerItem name="Disabled" value="0"/> 
+      </spinner>
+    
+      <checkbox description="DAC Direct to bypass the analog channel" 
+                name="DAC Direct" 
+                action="generic01 /sys/class/misc/boeffla_sound/dac_direct" 
+                label="Enables DAC Direct"/>
+      
+      <checkbox description="DAC Oversampling by 128 times" 
+                name="DAC Oversampling" 
+                action="generic01 /sys/class/misc/boeffla_sound/dac_oversampling" 
+                label="Enables DAC Oversampling"/>
+      
+      <checkbox description="Tune the chip clock for better quality" 
+                name="FLL Tuning " 
+                action="generic01 /sys/class/misc/boeffla_sound/fll_tuning" 
+                label="Enables FLL Tuning"/>
+      
+      <checkbox description="Tune up the phone speaker" 
+                name="Speaker Tuning" 
+                action="generic01 /sys/class/misc/boeffla_sound/speaker_tuning" 
+                label="Enables Speaker Tuning"/>
+      
+      <checkbox description="Convert Stereo into Mono" 
+                name="Mono Downmix" 
+                action="generic01 /sys/class/misc/boeffla_sound/mono_downmix" 
+                label="Enables Mono Downmix"/>
+
+      <seekBar  description="Improves Sound Deepness and Clarity" 
+		name="Stereo Expansion" 
+                action="generic /sys/class/misc/boeffla_sound/stereo_expansion" 
+                unit="" min="0" reversed="false" step="1" max="31"/>
+
+     <checkbox  description="Prevents any sound to be outputted via speaker when headphones are connected." 
+                name="Privacy mode" 
+                action="generic01 /sys/class/misc/boeffla_sound/privacy_mode"
+                label="Enable Privacy Mode"/>
+    </settingsPane>
+    
+        
+    <settingsPane description="Speaker amplification increases volume only on the speakers." 
+		  name="Speaker Amplification">
+      <seekBar  description="Speaker Amplifier Level (0-63 which corresponds to -57db-6db)" 
+		name="Speaker left channel volume"
+                action="boeffla-speaker left" 
+                unit="" min="0" reversed="false" step="1" max="63"/>      
+
+      <seekBar  description="" 
+		name="Speaker right channel volume"
+                action="boeffla-speaker right" 
+                unit="" min="0" reversed="false" step="1" max="63"/>
+    </settingsPane>
+
+     <settingsPane description="Headphone amplification increases volume only on headphones and headsets." 
+		  name="Headphone Amplification">
+      <seekBar  description="Headphone Amplifier Level (0-63 which corresponds to -57db-6db)" 
+		name="Headphone left channel volume"
+                action="boeffla-headphone left" 
+                unit="" min="0" reversed="false" step="1" max="63"/>      
+
+      <seekBar  description="" 
+		name="Headphone right channel volume"
+                action="boeffla-headphone right" 
+                unit="" min="0" reversed="false" step="1" max="63"/>
+    </settingsPane>
+
+    <settingsPane description="Controls the hardware equalizer." 
+                  name="Equalizer settings">
+
+    </settingsPane>
+
+    <settingsPane description="The microphone levels control the mic sensitivity." 
+		  name="Microphone control">
+      <seekBar  description="" 
+		name="Microphone General Gain"
+                action="generic /sys/class/misc/boeffla_sound/mic_level_general" 
+                unit="" min="0" reversed="false" step="1" max="31"/>
+
+      <seekBar  description="" 
+		name="Microphone Gain in Call"
+                action="generic /sys/class/misc/boeffla_sound/mic_level_call"
+                unit="" min="0" reversed="false" step="1" max="31"/>
+    </settingsPane>
+  </settingsTab>
+fi
 
   <settingsTab name="Misc">
     <settingsPane description="Misc Settings" name="Misc Settings">
