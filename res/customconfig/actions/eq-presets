@@ -18,7 +18,10 @@ fi
 
 fi
 
-if [ "$boeffla_sound" == "1" ];then
+if [ "$eq" != "0" ];then
+
+    echo "0" > /sys/class/misc/boeffla_sound/eq
+    echo "$eq" > /sys/class/misc/boeffla_sound/eq
 
 #echo -${digital_gain}000 > /sys/class/misc/scoobydoo_sound/digital_gain
 #echo 1 A 0x0FBB > /sys/class/misc/scoobydoo_sound/headphone_eq_bands_values
