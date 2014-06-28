@@ -317,7 +317,45 @@ if [ -e /sys/class/misc/boeffla_sound ]; then
 
     <settingsPane description="Controls the hardware equalizer." 
                   name="Equalizer settings">
-
+      
+       <spinner description="Enable or disable Boeffla Equalizer" name="Boeffla EQ" action="generic /sys/class/misc/boeffla_sound/eq">
+	     <spinnerItem name="Disabled" value="0"/> 
+             <spinnerItem name="Enabled" value="1"/> 
+	     <spinnerItem name="Enabled without Saturation Prevention" value="2"/>
+      </spinner>
+      
+    
+	<spinner description="Choose which equalizer settings to use: Presets or Graphical Equalizer." name="EQ Presets" action="eq-presets eq_selection">
+	      <spinnerItem name="Use presets" value="0"/> 
+	      <spinnerItem name="Use graphical equalizer" value="1"/> 
+	</spinner>
+      
+       <spinner description="This will set the EQ Gain Preset." name="EQ Gain Preset" action="eq-presets eq_preset">
+             <spinnerItem name="None" value="0"/> 
+             <spinnerItem name="Archis Audiophile" value="1"/>
+             <spinnerItem name="Baseland" value ="2"/>
+             <spinnerItem name="Bass Extreme" value="3"/> 
+             <spinnerItem name="Bass treble" value="4"/> 
+             <spinnerItem name="Classic" value="5"/> 
+             <spinnerItem name="Dance" value="6"/> 
+             <spinnerItem name="Eargasm" value="7"/> 
+             <spinnerItem name="Metal/Rock" value="8"/> 
+             <spinnerItem name="Pleasant" value="9"/> 
+             <spinnerItem name="Treble" value="10"/> 
+       </spinner>
+    </settingsPane>
+    
+    <settingsPane description="Graphical Equalizer" name="Graphical Equalizer">
+      <seekBar description="" 
+		name="Band1 gain" action="eq-presets eq_band1" unit=" dB" min="-12" reversed="false" step="1" max="12"/>
+      <seekBar description="" 
+		name="Band2 gain" action="eq-presets eq_band2" unit=" dB" min="-12" reversed="false" step="1" max="12"/>
+      <seekBar description="" 
+		name="Band3 gain" action="eq-presets eq_band3" unit=" dB" min="-12" reversed="false" step="1" max="12"/>
+      <seekBar description="" 
+		name="Band4 gain" action="eq-presets eq_band4" unit=" dB" min="-12" reversed="false" step="1" max="12"/>
+      <seekBar description="" 
+		name="Band5 gain" action="eq-presets eq_band5" unit=" dB" min="-12" reversed="false" step="1" max="12"/>
     </settingsPane>
 
     <settingsPane description="The microphone levels control the mic sensitivity." 
