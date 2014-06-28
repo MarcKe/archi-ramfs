@@ -36,41 +36,41 @@ if [ "$eq_selection" == "0" ];
 then
 case "$eq_preset" in
   0)
-    echo "0 0 0 0 0" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "0 0 0 0 0" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   1)
-    echo "8 4 4 2 6" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "8 4 4 2 6" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   2)
-    echo "8 7 4 3 3" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "8 7 4 3 3" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   3)
-    echo "12 8 3 -1 1" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "12 8 3 -1 1" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   4)
-    echo "10 7 0 2 5" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "10 7 0 2 5" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   5)
-    echo "0 0 0 -3 -5" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "0 0 0 -3 -5" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   6)
-    echo "4 0 -6 0 3" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "4 0 -6 0 3" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   7)
-    echo "12 8 4 2 3" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "12 8 4 2 3" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   8)
-    echo "4 3 0 -4 3" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "4 3 0 -4 3" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   9)
-    echo "4 3 2 2 3" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "4 3 2 2 3" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
   10)
-    echo "-5 1 0 4 3" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "-5 1 0 4 3" > /sys/class/misc/boeffla_sound/eq_gains
     ;;
 esac;
 else
-    echo "$eq_band1 $eq_band2 $eq_band3 $eq_band4 $eq_band5" > /sys/class/misc/boeffla_sound/eq_gain
+    echo "$eq_band1 $eq_band2 $eq_band3 $eq_band4 $eq_band5" > /sys/class/misc/boeffla_sound/eq_gains
 fi
 
 fi
