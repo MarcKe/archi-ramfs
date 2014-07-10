@@ -181,3 +181,4 @@ eq_band2=0
 eq_band3=0
 eq_band4=0
 eq_band5=0
+eq_bass=0
