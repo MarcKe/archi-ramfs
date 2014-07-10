@@ -73,6 +73,7 @@ cat << ENDCONFIG
                   name="CPU voltage control">
 `
 cat /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table | \
+sed -e 's/mhz//g;s/://g' | awk '{ print $1, $2 }' | \
 while read FREQ MVOLT; do
   echo '      <seekBar  description="Default voltage: '$MVOLT'mV"
 	        name="'${FREQ}' MHz step" 
