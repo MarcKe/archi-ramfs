@@ -106,61 +106,51 @@ case "$default_governor" in
         echo $max_cpu_lock > /sys/devices/system/cpu/cpufreq/lulzactiveq/max_cpu_lock
   ;;
   2)  
-        echo "smartassV2" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    ;;
-  3)  
-        echo "GoogyQ" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-        echo $GoogyQ_up_threshold > /sys/devices/system/cpu/cpufreq/GoogyQ/up_threshold
-        echo $GoogyQ_sampling_rate_min > /sys/devices/system/cpu/cpufreq/GoogyQ/sampling_rate_min
-        echo $GoogyQ_sampling_rate > /sys/devices/system/cpu/cpufreq/GoogyQ/sampling_rate
-        echo $GoogyQ_sampling_down_factor > /sys/devices/system/cpu/cpufreq/GoogyQ/sampling_down_factor
-        echo $GoogyQ_powersave_bias > /sys/devices/system/cpu/cpufreq/GoogyQ/powersave_bias
-        echo $GoogyQ_io_is_busy > /sys/devices/system/cpu/cpufreq/GoogyQ/io_is_busy
-        echo $GoogyQ_ignore_nice_load > /sys/devices/system/cpu/cpufreq/GoogyQ/ignore_nice_load
-        echo $GoogyQ_down_differential > /sys/devices/system/cpu/cpufreq/GoogyQ/down_differential
-    ;;
-  4)
+        echo "pegasusqplus" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    ;;  
+  3)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "1" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  5)
+  4)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "2" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  6)
+  5)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "3" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  7)
+  6)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "4" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  8)
+  7)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "5" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  9)
+  8)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "6" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  10)
+  9)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "7" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  11)
+  10)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "8" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  12)
+  11)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "9" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  13)
+  12)
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
         echo "10" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
     ;;
-  14)  
+  13)  
         echo "zzmoove" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+        echo "0" > /sys/devices/system/cpu/cpufreq/zzmoove/profile_number
         echo $zzmoove_down_threshold > /sys/devices/system/cpu/cpufreq/zzmoove/down_threshold
         echo $zzmoove_down_threshold_hotplug1 > /sys/devices/system/cpu/cpufreq/zzmoove/down_threshold_hotplug1
         echo $zzmoove_down_threshold_hotplug2 > /sys/devices/system/cpu/cpufreq/zzmoove/down_threshold_hotplug2
