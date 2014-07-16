@@ -8,6 +8,7 @@ cat << ENDCONFIG
        <spinner description="This will set the default CPU governor. Default CPU governor will only be set during early stages of booting (before init.d execution) and can be overriden by later scripts or apps." name="Default CPU Governor" action="cpugov default_governor">
              <spinnerItem name="PegasusQ" value="0"/> 
              <spinnerItem name="LulzactiveQ" value="1"/>
+             <spinnerItem name="PegasuqQplus" value="2"/>
              <spinnerItem name="ZZMoove-Default" value="3"/> 
              <spinnerItem name="ZZMoove-Yank Battery" value="4"/> 
              <spinnerItem name="ZZMoove-Yank Battery Extreme" value="5"/> 
