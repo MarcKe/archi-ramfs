@@ -5,21 +5,21 @@
 #exec >>/data/user.log
 #exec 2>&1
 
-mkdir /data/.kernel
-chmod 777 /data/.kernel
+mkdir /data/.archi
+chmod 777 /data/.archi
  
 . /res/customconfig/customconfig-helper
 
 ccxmlsum=`md5sum /res/customconfig/customconfig.xml | awk '{print $1}'`
-if [ "a${ccxmlsum}" != "a`cat /data/.kernel/.ccxmlsum`" ];
+if [ "a${ccxmlsum}" != "a`cat /data/.archi/.ccxmlsum`" ];
 then
-  rm -f /data/.kernel/*.profile
-  echo ${ccxmlsum} > /data/.kernel/.ccxmlsum
+  rm -f /data/.archi/*.profile
+  echo ${ccxmlsum} > /data/.archi/.ccxmlsum
 fi
-[ ! -f /data/.kernel/default.profile ] && cp /res/customconfig/default.profile /data/.kernel
-[ ! -f /data/.kernel/battery.profile ] && cp /res/customconfig/battery.profile /data/.kernel
-[ ! -f /data/.kernel/balanced.profile ] && cp /res/customconfig/balanced.profile /data/.kernel
-[ ! -f /data/.kernel/performance.profile ] && cp /res/customconfig/performance.profile /data/.kernel
+[ ! -f /data/.archi/default.profile ] && cp /res/customconfig/default.profile /data/.archi
+[ ! -f /data/.archi/battery.profile ] && cp /res/customconfig/battery.profile /data/.archi
+[ ! -f /data/.archi/balanced.profile ] && cp /res/customconfig/balanced.profile /data/.archi
+[ ! -f /data/.archi/performance.profile ] && cp /res/customconfig/performance.profile /data/.archi
 
 read_defaults
 read_config
